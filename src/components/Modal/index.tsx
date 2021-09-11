@@ -7,13 +7,13 @@ interface Props {
 }
 
 const Modal: React.FC<Props> = ({ isOpen, setIsOpen, children }) => {
-  const [modalStatus, setModalStatus] = useState(isOpen)
+  const [modalStatus, setModalStatus] = useState(false)
 
   useEffect(() => {
     if (modalStatus !== isOpen) {
       setModalStatus(isOpen)
     }
-  }, [])
+  }, [isOpen])
 
   return (
     <ReactModal

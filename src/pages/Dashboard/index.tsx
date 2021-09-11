@@ -99,15 +99,18 @@ const Dashboard: React.FC = () => {
         handleUpdateFood={handleUpdateFood}
       />
 
+
       <FoodsContainer data-testid="foods-list">
         {foods &&
           foods.map(food => (
-            <Food
-              key={food.id}
-              food={food}
-              handleDelete={handleDeleteFood}
-              handleEditFood={handleEditFood}
-            />
+            <>
+              <Food
+                key={food.id}
+                food={food}
+                handleDelete={handleDeleteFood}
+                handleEditFood={handleEditFood}
+              />
+            </>
           ))}
       </FoodsContainer>
     </>
